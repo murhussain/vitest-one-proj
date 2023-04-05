@@ -37,9 +37,19 @@ it('should yield 0 if an empty array is provided', () => {
   expect(result).toBe(0);
 });
 
-it('should throw an error if no argument is provided', () => { 
+it('should throw an error if no argument is provided', () => {
   const result = () => {
     add();
   };
   expect(result).toThrow();
-})
+});
+
+it('should throw an error if provided with multiple arguments instead of an array', () => {
+  const num1 = 1;
+  const num2 = 2;
+
+  const result = () => {
+    add(num1, num2);
+  };
+  expect(result).toThrow();
+});
